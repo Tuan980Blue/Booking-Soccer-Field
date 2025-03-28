@@ -128,7 +128,7 @@ const Navbar = () => {
   };
 
   return (
-      <nav className="w-full bg-green-100 bg-opacity-90 border-gray-200 dark:bg-green-200 dark:bg-opacity-50">
+      <nav className="w-full bg-green-200 bg-opacity-90 border-gray-200 dark:bg-green-200 dark:bg-opacity-50">
         <div className="w-full flex items-center justify-between px-8 py-2">
           {/* Logo và Tiêu đề */}
           <a href="/" className="flex items-center space-x-2 flex-shrink-0">
