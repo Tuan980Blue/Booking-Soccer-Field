@@ -128,19 +128,23 @@ const Navbar = () => {
   };
 
   return (
-      <nav className="w-full bg-white border-gray-200 dark:bg-gray-900">
-        <div className="w-full flex items-center justify-between p-4">
+      <nav className="w-full bg-green-100 bg-opacity-90 border-gray-200 dark:bg-green-200 dark:bg-opacity-50">
+        <div className="w-full flex items-center justify-between px-8 py-2">
           {/* Logo và Tiêu đề */}
-          <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/vite.svg" className="h-8" alt="Logo"/>
-            <span className="self-center text-xl font-bold whitespace-nowrap dark:text-white">SPORT CENTER</span>
+          <a href="/" className="flex items-center space-x-2 flex-shrink-0">
+            <img src={"/LogoT&H.png"}
+                 alt="Logo"
+                 className="w-10 md:w-12 lg:w-14 h-auto transition-all duration-300"/>
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-serif bg-gradient-to-r from-gray-800 via-green-500 to-yellow-200 text-transparent bg-clip-text drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 tracking-wide">
+              BOOKING FIELD
+            </h2>
           </a>
 
           {/* Biểu tượng menu trên di động */}
           <button
               data-collapse-toggle="navbar-menu"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100"
               aria-controls="navbar-menu"
               aria-expanded={isMobileMenuOpen}
               onClick={toggleMobileMenu}
@@ -182,7 +186,7 @@ const Navbar = () => {
                       <UserMenuItem link="/dashboard" text="Dashboard"/>
                       <UserMenuItem link="/settings" text="Settings"/>
                       <UserMenuItem link={`/user/5`} text="Edit"/>
-                      <UserMenuItem  text="Sign out"/>
+                      <UserMenuItem text="Sign out"/>
                     </ul>
                   </div>
               )}
@@ -191,10 +195,10 @@ const Navbar = () => {
 
           {/* Navbar items cho màn hình lớn */}
           <div className="hidden md:flex">
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex text-lg flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
               <li>
                 <a href="/"
-                   className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">Trang
+                   className="block py-2 px-3 text-white rounded md:text-green-600 md:p-0 md:dark:text-green-600">Trang
                   Chủ</a>
               </li>
               <li>
@@ -202,16 +206,16 @@ const Navbar = () => {
                   <button
                       ref={buttonRef}
                       onMouseEnter={() => setIsMegaMenuOpen(true)}
-                      className={`flex items-center text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 ${isMegaMenuOpen
-                                                                                                                                                         ? 'text-blue-600'
-                                                                                                                                                         : ''}`}
+                      className={`flex items-center text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition duration-200 ${isMegaMenuOpen
+                          ? 'text-blue-600'
+                          : ''}`}
                   >
                     Dịch Vụ
                     {/* Mũi tên biểu tượng thay đổi */}
                     <svg
                         className={`ml-2 w-4 h-4 transition-transform duration-300 ${isMegaMenuOpen
-                                                                                     ? 'rotate-180'
-                                                                                     : 'rotate-0'}`}
+                            ? 'rotate-180'
+                            : 'rotate-0'}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -224,18 +228,18 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
+                <a href="/booking"
+                   className="block py-2 px-3 text-gray-900 rounded hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  Đặt Sân</a>
+              </li>
+              <li>
                 <a href="#"
-                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Khóa
+                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-600 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Khóa
                   Học</a>
               </li>
               <li>
-                <a href="/booking"
-                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                  Lịch Đặt</a>
-              </li>
-              <li>
                 <a href="/contact"
-                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Liên
+                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-600 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Liên
                   Hệ</a>
               </li>
             </ul>
@@ -256,15 +260,15 @@ const Navbar = () => {
                     <button
                         onClick={toggleMegaMenu}
                         className={`flex items-center text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition duration-200 ${isMegaMenuOpen
-                                                                                                                                                           ? 'text-blue-600'
-                                                                                                                                                           : ''}`}
+                            ? 'text-blue-600'
+                            : ''}`}
                     >
                       Dịch Vụ
                       {/* Mũi tên biểu tượng thay đổi */}
                       <svg
                           className={`ml-2 w-4 h-4 transition-transform duration-300 ${isMegaMenuOpen
-                                                                                       ? 'rotate-180'
-                                                                                       : 'rotate-0'}`}
+                              ? 'rotate-180'
+                              : 'rotate-0'}`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
