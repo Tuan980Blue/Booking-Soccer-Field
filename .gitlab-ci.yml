@@ -1,0 +1,46 @@
+default:
+  image: docker
+  services:
+    - docker:24.0.5-dind
+variables:
+  DOCKER_TLS_CERTDIR: "/certs"
+
+stages:
+  - testing
+  - build
+  - deploy
+
+Test:
+  stage: testing
+  image: amazoncorretto:22-alpine
+  script:
+    - cd Spring
+    - chmod +x gradlew
+    - ./gradlew test
+  cache:
+    paths:
+      - Spring/.gradle
+
+Build_Image:
+  stage: build
+  before_script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  script:
+    - cd Spring
+    - docker buildx build -t htilssu/trungtamthethao:latest .
+    - docker push htilssu/trungtamthethao:latest
+
+pull-image:
+  stage: deploy
+  needs:
+    - job: Build_Image
+      artifacts: false
+  before_script:
+    - chmod 600 $SSH_KEY
+  script:
+    - ssh -v -i $SSH_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
+      echo \"$ENV\" > ~/secrets/.env.tttd &&
+      sudo docker pull htilssu/trungtamthethao:latest &&
+      sudo docker rm trungtamthethao -f &&
+      sudo docker run --log-opt max-size=10m --log-opt max-file=3 --env-file ~/secrets/.env.tttd -d --name trungtamthethao -p $PORT:8080 htilssu/trungtamthethao:latest
+      "
