@@ -4,11 +4,11 @@ import './SliderBanner.css';
 
 const Banner = () => {
     const slides = [
-        { image: 'gym-thumbnail1.png', name: 'SPORT CENTER', description: 'Tinh ru anh hieu di chay pho, chua kip chay pho thi anhchay mat tieu' },
-        { image: 'gym-thumbnail2.png', name: 'SPORT CENTER', description: 'Tinh ru anh toan di chay pho, chua kip chay pho thi anhchay mat tieu' },
-        { image: 'sym-thumbnail1.png', name: 'SPORT CENTER', description: 'Tinh ru anh tuan di chay pho, chua kip chay pho thi anhchay mat tieu' },
-        { image: 'soccer-thumbnail1.png', name: 'SPORT CENTER', description: 'Tinh ru anh di nghia di chay pho, chua kip chay pho thi anhchay mat tieu' },
-        { image: 'soccer-thumbnail2.png', name: 'SPORT CENTER', description: 'Tinh ru anh tai di chay pho, chua kip chay pho thi anhchay mat tieu' },
+        { image: 'gym-thumbnail1.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
+        { image: 'gym2.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
+        { image: 'bongro-deal.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
+        { image: 'gym7.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
+        { image: 'soccer-thumbnail2.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,13 +46,17 @@ const Banner = () => {
 
     return (
         <div className="min-h-screen flex justify-center items-center">
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1300px] h-[600px] p-[50px] bg-[#f5f5f5] shadow-[0_30px_50px_rgba(219,219,219,1)] overflow-hidden">
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full p-[50px] bg-[#f5f5f5] shadow-[0_30px_50px_rgba(219,219,219,1)] overflow-hidden">
                 <div id="sw-max mt-[50px]" ref={slideRef}>
                     {slides.map((slide, index) => (
                         <div
                             key={index}
                             className={`slide-element ${index === currentIndex ? 'visible' : ''}`}
-                            style={{ backgroundImage: `url(${slide.image})` }}
+                            style={{
+                                backgroundImage: `url(${slide.image})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
                         >
                             <div className="slide-info">
                                 <div className="slide-title">{slide.name}</div>
@@ -66,14 +70,14 @@ const Banner = () => {
                 </div>
                 <div className="absolute bottom-8 z-50 text-center w-full flex justify-center gap-4">
                     <button
-                        className="group flex items-center justify-center w-12 h-12 rounded-full border border-white bg-transparent transition duration-500 hover:bg-white cursor-pointer"
+                        className="group flex items-center justify-center w-12 h-12 rounded-full border border-white bg-transparent transition duration-500 hover:bg-green-400 cursor-pointer"
                         id="prev"
                         onClick={prevSlide}
                     >
                         <FaAngleLeft className="text-white text-xl group-hover:text-black transition duration-500" />
                     </button>
                     <button
-                        className="group flex items-center justify-center w-12 h-12 rounded-full border border-white bg-transparent transition duration-500 hover:bg-white cursor-pointer"
+                        className="group flex items-center justify-center w-12 h-12 rounded-full border border-white bg-transparent transition duration-500 hover:bg-green-400 cursor-pointer"
                         id="next"
                         onClick={nextSlide}
                     >
