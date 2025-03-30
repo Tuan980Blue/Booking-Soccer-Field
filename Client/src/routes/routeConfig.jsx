@@ -3,7 +3,7 @@ import {MainLayout} from '../layouts/MainLayout.jsx';
 import {PageNotFound} from '../pages/PageNotFound.jsx';
 import SignUp from '../pages/sign-up/SignUp.jsx';
 import ForgotPassword from './../pages/admin/forgot-password/ForgotPassword';
-import Home from '../pages/home/HomePage.jsx';
+import Home from '../pages/home/IntroPage.jsx';
 import RentYardPage from '../modules/core/components/rent-a-yard/SoccerField/RentYardPage.jsx';
 import SoccerFieldInfo from '../modules/core/components/rent-a-yard/SoccerField/SoccerFieldInfo.jsx';
 import SignIn from '../pages/sign-in/SignIn.jsx';
