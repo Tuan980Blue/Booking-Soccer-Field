@@ -17,22 +17,22 @@ const MegaMenu = () => {
   const menuItems = [
     {
       title: 'CLB GYM',
-      description: 'Connect with third-party tools that you are already using.',
+      description: 'Xem và đặt lịch phòng tập GYM.',
       link: '/gym',
     },
     {
       title: 'SÂN BÓNG ĐÁ',
-      description: 'Segment your audience for targeted marketing.',
+      description: 'Xem và đặt lịch sân Bóng Đá.',
       link: '/soccer',
     },
     {
       title: 'HỒ BƠI',
-      description: 'Manage your customer relationships effectively.',
+      description: 'Xem và đặt lịch Hồ Bơi.',
       link: '/swim',
     },
     {
       title: 'SÂN TENNIS',
-      description: 'Analyze data to make informed decisions.',
+      description: 'Xem và đặt lịch sân TENNIS.',
       link: '/analytics',
     }
     ,
@@ -202,6 +202,11 @@ const Navbar = () => {
                   Chủ</a>
               </li>
               <li>
+                <a href="/booking"
+                   className="block py-2 px-3 text-gray-900 rounded hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  Đặt Sân</a>
+              </li>
+              <li>
                 <div className="flex space-x-4">
                   <button
                       ref={buttonRef}
@@ -228,16 +233,6 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <a href="/booking"
-                   className="block py-2 px-3 text-gray-900 rounded hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                  Đặt Sân</a>
-              </li>
-              <li>
-                <a href="#"
-                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-600 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Khóa
-                  Học</a>
-              </li>
-              <li>
                 <a href="/contact"
                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-600 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Liên
                   Hệ</a>
@@ -250,7 +245,7 @@ const Navbar = () => {
             <div id="navbar-menu" className="md:hidden">
               <ul className="flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                 <li>
-                  <a href="/"
+                <a href="/"
                      className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Trang
                     Chủ</a>
                 </li>

@@ -18,12 +18,12 @@ const FeaturedCategories = () => {
     return (
         <section className="py-16">
             <div className="container mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold mb-8 text-gray-800">Danh Mục Nổi Bật</h2>
+                <h2 className="text-3xl font-bold mb-10 text-gray-800">Danh Mục Nổi Bật</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {categories.map((category, index) => (
                         <div
                             key={index}
-                            className="group bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+                            className="group bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 border-2 hover:border-green-500"
                         >
                             <img
                                 src={category.imgSrc}
