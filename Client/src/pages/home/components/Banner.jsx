@@ -37,17 +37,17 @@ const Banner = () => {
             nextSlide();
         };
 
-        autoplayRef.current = setInterval(play, 5000); // Chuyển slide mỗi 3 giây
+        autoplayRef.current = setInterval(play, 5000);
 
         return () => {
-            clearInterval(autoplayRef.current); // Dọn dẹp khi component unmount
+            clearInterval(autoplayRef.current);
         };
     }, [currentIndex]);
 
     return (
         <div className="min-h-screen flex justify-center items-center">
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full p-[50px] bg-[#f5f5f5] shadow-[0_30px_50px_rgba(219,219,219,1)] overflow-hidden">
-                <div id="sw-max mt-[50px]" ref={slideRef}>
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#f5f5f5] shadow-[0_30px_50px_rgba(219,219,219,1)] overflow-hidden">
+                <div id="sw-max " ref={slideRef}>
                     {slides.map((slide, index) => (
                         <div
                             key={index}
@@ -59,7 +59,7 @@ const Banner = () => {
                             }}
                         >
                             <div className="slide-info">
-                                <div className="slide-title">{slide.name}</div>
+                                <div className="slide-title text-green-500">{slide.name}</div>
                                 <div className="slide-detail">{slide.description}</div>
                                 <button className="slide-button bg-green-400 rounded-lg">
                                     Booking Now
