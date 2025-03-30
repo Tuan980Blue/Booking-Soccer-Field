@@ -41,6 +41,11 @@ const MegaMenu = () => {
       description: 'Các HLV đăng các khóa học để cho học viên',
       link: '/sellcourses',
     },
+    {
+      title: 'Admin',
+      description: 'Nơi bạn quản lý mọi thứ.',
+      link: '/admin',
+    },
   ];
 
   return (
