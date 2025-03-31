@@ -31,8 +31,8 @@ const MegaMenu = () => {
       link: '/swim',
     },
     {
-      title: 'SÂN Pickle PALL',
-      description: 'Xem và đặt lịch sân TENNIS.',
+      title: 'SÂN PicklePALL',
+      description: 'Xem và đặt lịch sân PicklePall.',
       link: '/analytics',
     }
     ,
@@ -136,27 +136,27 @@ const Navbar = () => {
       <nav className="w-full bg-white bg-opacity-90 border-gray-200">
         <div className="w-full flex items-center justify-between px-6 lg:px-20 py-2">
           {/* Logo và Tiêu đề */}
-          <a href="/" className="flex items-center space-x-2 flex-shrink-0">
+          <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
             <img src={"/LogoT&H.png"}
                  alt="Logo"
                  className="w-10 md:w-12 lg:w-14 h-auto transition-all duration-300"/>
             <h2 className="text-xl sm:block hidden md:text-2xl lg:text-3xl font-serif bg-gradient-to-r from-gray-800 via-green-500 to-yellow-200 text-transparent bg-clip-text drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 tracking-wide">
               BOOKING FIELD
             </h2>
-          </a>
+          </Link>
 
           {/* Navbar items cho màn hình lớn */}
           <div className="hidden md:flex">
             <ul className="flex text-lg flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
               <li>
-                <a href="/"
-                   className="block py-2 px-3 text-white rounded md:text-green-600 md:p-0 md:dark:text-green-600">Trang
-                  Chủ</a>
+                <Link to={"/home"}
+                   className="block py-2 px-3 text-gray-900 hover:text-green-600 rounded md:p-0 md:dark:text-green-600">Trang
+                  Chủ</Link>
               </li>
               <li>
-                <a href="/booking"
+                <Link to="/booking"
                    className="block py-2 px-3 text-gray-900 rounded hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                  Đặt Sân</a>
+                  Đặt Sân</Link>
               </li>
               <li>
                 <div className="flex space-x-4">
@@ -185,9 +185,9 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <a href="/contact"
+                <Link to="/contact"
                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-600 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Liên
-                  Hệ</a>
+                  Hệ</Link>
               </li>
             </ul>
           </div>
@@ -261,9 +261,9 @@ const Navbar = () => {
             <div id="navbar-menu" className="md:hidden">
               <ul className="flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                 <li>
-                <a href="/"
+                <Link to="/home"
                      className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Trang
-                    Chủ</a>
+                    Chủ</Link>
                 </li>
                 <li>
                   {/* Nút Dịch Vụ */}
@@ -291,19 +291,19 @@ const Navbar = () => {
                   </div>
                 </li>
                 <li>
-                  <a href="#"
+                  <Link to="#"
                      className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Khóa
-                    Học</a>
+                    Học</Link>
                 </li>
                 <li>
-                  <a href="#"
+                  <Link to="#"
                      className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Đặt
-                    Lịch</a>
+                    Lịch</Link>
                 </li>
                 <li>
-                  <a href="#"
+                  <Link to="#"
                      className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Liên
-                    Hệ</a>
+                    Hệ</Link>
                 </li>
               </ul>
             </div>
