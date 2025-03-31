@@ -31,7 +31,7 @@ const MegaMenu = () => {
       link: '/swim',
     },
     {
-      title: 'SÂN TENNIS',
+      title: 'SÂN Pickle PALL',
       description: 'Xem và đặt lịch sân TENNIS.',
       link: '/analytics',
     }
@@ -134,69 +134,16 @@ const Navbar = () => {
 
   return (
       <nav className="w-full bg-white bg-opacity-90 border-gray-200">
-        <div className="w-full flex items-center justify-between px-8 py-2">
+        <div className="w-full flex items-center justify-between px-6 lg:px-20 py-2">
           {/* Logo và Tiêu đề */}
           <a href="/" className="flex items-center space-x-2 flex-shrink-0">
             <img src={"/LogoT&H.png"}
                  alt="Logo"
                  className="w-10 md:w-12 lg:w-14 h-auto transition-all duration-300"/>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-serif bg-gradient-to-r from-gray-800 via-green-500 to-yellow-200 text-transparent bg-clip-text drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 tracking-wide">
+            <h2 className="text-xl sm:block hidden md:text-2xl lg:text-3xl font-serif bg-gradient-to-r from-gray-800 via-green-500 to-yellow-200 text-transparent bg-clip-text drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 tracking-wide">
               BOOKING FIELD
             </h2>
           </a>
-
-          {/* Biểu tượng menu trên di động */}
-          <button
-              data-collapse-toggle="navbar-menu"
-              type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100"
-              aria-controls="navbar-menu"
-              aria-expanded={isMobileMenuOpen}
-              onClick={toggleMobileMenu}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 17 14">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                    d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-          </button>
-
-          {/* Menu người dùng */}
-          <div className="flex items-center md:order-2">
-            <div className="relative">
-              <button
-                  type="button"
-                  ref={UserbuttonRef}
-                  onClick={toggleUserMenu}
-                  className="flex items-center text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                  aria-expanded={isUserMenuOpen}
-                  aria-haspopup="true"
-              >
-                <span className="sr-only">Open user menu</span>
-                <img className="w-9 h-9 rounded-full" src={user?.avatar} alt="User Avatar"/>
-              </button>
-
-              {/* User menu dropdown */}
-              {!isLoading && user && isUserMenuOpen && (
-                  <div ref={UsermenuRef}
-                       className="absolute right-0 mt-2 w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
-                    <div className="px-4 py-3">
-                                    <span className="block text-sm font-medium text-gray-900 dark:text-white">
-                                    {user?.firstName} {user?.lastName}</span>
-                      <span className="block text-sm text-gray-500 dark:text-gray-400">
-                                    {user?.email}</span>
-                    </div>
-                    <ul className="py-2">
-                      <UserMenuItem link="/dashboard" text="Dashboard"/>
-                      <UserMenuItem link="/settings" text="Settings"/>
-                      <UserMenuItem link={`/user/5`} text="Edit"/>
-                      <UserMenuItem text="Sign out"/>
-                    </ul>
-                  </div>
-              )}
-            </div>
-          </div>
 
           {/* Navbar items cho màn hình lớn */}
           <div className="hidden md:flex">
@@ -243,6 +190,70 @@ const Navbar = () => {
                   Hệ</a>
               </li>
             </ul>
+          </div>
+
+          <div className={"flex justify-center items-center"}>
+            {/* Biểu tượng menu trên di động */}
+            <button
+                data-collapse-toggle="navbar-menu"
+                type="button"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100"
+                aria-controls="navbar-menu"
+                aria-expanded={isMobileMenuOpen}
+                onClick={toggleMobileMenu}
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 17 14">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                      d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+            </button>
+
+            {/* Menu người dùng */}
+            <div className="flex items-center md:order-2">
+              <div className="relative">
+                <button
+                    type="button"
+                    ref={UserbuttonRef}
+                    onClick={toggleUserMenu}
+                    className="flex items-center text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                    aria-expanded={isUserMenuOpen}
+                    aria-haspopup="true"
+                >
+                  <span className="sr-only">Open user menu</span>
+                  {user ? (
+                      <img className="w-9 h-9 rounded-full" src={user.avatar} alt="User Avatar" />
+                  ) : (
+                      <Link to={"/sign-in"}>
+                        <button
+                            className="px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition duration-200">
+                          Đăng nhập
+                        </button>
+                      </Link>
+                  )}
+                </button>
+
+                {/* User menu dropdown */}
+                {!isLoading && user && isUserMenuOpen && (
+                    <div ref={UsermenuRef}
+                         className="absolute right-0 mt-2 w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+                      <div className="px-4 py-3">
+                                    <span className="block text-sm font-medium text-gray-900 dark:text-white">
+                                    {user?.firstName} {user?.lastName}</span>
+                        <span className="block text-sm text-gray-500 dark:text-gray-400">
+                                    {user?.email}</span>
+                      </div>
+                      <ul className="py-2">
+                        <UserMenuItem link="/dashboard" text="Dashboard"/>
+                        <UserMenuItem link="/settings" text="Settings"/>
+                        <UserMenuItem link={`/user/5`} text="Edit"/>
+                        <UserMenuItem text="Sign out"/>
+                      </ul>
+                    </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
         {/* Menu di động */}
