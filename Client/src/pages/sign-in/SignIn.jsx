@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {motion} from 'framer-motion';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {signIn} from '../../utils/auth.util.js';
@@ -124,7 +124,7 @@ const SignIn = () => {
             className="bg-white relative rounded-xl shadow-xl border-2 border-r-gray-700 w-full md:max-w-md max-w-sm py-10 md:px-8 px-6 md:mr-32 md:mx-0 mx-4">
           <div className="flex flex-col">
             {/* Logo */}
-            <div className={"flex justify-center items-center gap-4"}>
+            <Link to={"/"} className={"flex justify-center items-center gap-4"}>
               <motion.img
                   src="/LogoT&H.png"
                   alt="Logo"
@@ -142,7 +142,7 @@ const SignIn = () => {
               >
                 Booking FIELD
               </motion.h1>
-            </div>
+            </Link>
             {/* Description */}
             <motion.p
                 className="text-gray-500 mb-6 flex justify-center items-center"
@@ -262,12 +262,12 @@ const SignIn = () => {
               >
                 <p className="text-gray-500 text-sm">
                   Nếu chưa có tài khoản?{' '}
-                  <a
-                      href="/sign-up"
+                  <Link
+                      to="/sign-up"
                       className="text-green-500 hover:text-green-400"
                   >
                     Đăng ký
-                  </a>
+                  </Link>
                 </p>
               </motion.div>
             </form>

@@ -3,7 +3,6 @@ import {MainLayout} from '../layouts/MainLayout.jsx';
 import {PageNotFound} from '../pages/PageNotFound.jsx';
 import SignUp from '../pages/sign-up/SignUp.jsx';
 import ForgotPassword from './../pages/admin/forgot-password/ForgotPassword';
-import Home from '../pages/home/IntroPage.jsx';
 import RentYardPage from '../modules/core/components/rent-a-yard/SoccerField/RentYardPage.jsx';
 import SoccerFieldInfo from '../modules/core/components/rent-a-yard/SoccerField/SoccerFieldInfo.jsx';
 import SignIn from '../pages/sign-in/SignIn.jsx';
@@ -42,6 +41,8 @@ import AdminDashboard from '../pages/admin/AdminDashboard.jsx';
 import RoomTypes from './../pages/admin/layout-admin/gym-manage/room-types/RoomTypes';
 import CheckoutPage from "../modules/core/components/check-out/CheckoutPage.jsx";
 import PaymentSuccessPage from "../modules/core/components/check-out/PaymentSuccessPage.jsx";
+import IntroPage from "../pages/intro/IntroPage.jsx";
+import HomePage from "../pages/home/HomePage.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -197,7 +198,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home/>,
+        element: <IntroPage/>,
+      },
+      {
+        path: 'home',
+        element: <HomePage/>,
       },
       {
         path: 'soccer',

@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {motion} from 'framer-motion';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {wPost} from '../../utils/request.util.js';
@@ -179,7 +179,7 @@ const SignUp = () => {
                 className="bg-white relative rounded-xl shadow-xl border-2 border-r-gray-700 w-full md:max-w-md max-w-sm py-10 md:px-8 px-6 md:mr-32 md:mx-0 mx-4">
                 <div className="flex flex-col">
                     {/* Logo */}
-                    <div className={"flex justify-center items-center gap-4"}>
+                    <Link to={"/"} className={"flex justify-center items-center gap-4"}>
                         <motion.img
                             src="/LogoT&H.png"
                             alt="Logo"
@@ -197,7 +197,7 @@ const SignUp = () => {
                         >
                             Booking FIELD
                         </motion.h1>
-                    </div>
+                    </Link>
                     {/* Form */}
                     <form onSubmit={handleSubmit} className="w-full">
                         {/* Name */}
@@ -381,12 +381,12 @@ const SignUp = () => {
                         >
                             <p className="text-gray-500 text-sm">
                                 Đã có tài khoản?{" "}
-                                <a
-                                    href="/sign-in"
+                                <Link
+                                    to="/sign-in"
                                     className="text-green-500 hover:text-green-400"
                                 >
                                     Đăng nhập
-                                </a>
+                                </Link>
                             </p>
                         </motion.div>
                     </form>
