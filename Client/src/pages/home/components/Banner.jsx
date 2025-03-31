@@ -4,13 +4,13 @@ import './SliderBanner.css';
 
 const Banner = () => {
     const slides = [
-        { image: 'bg-picklepall.png', name: 'Sân PicklePall', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
+        { image: 'bg-picklepall3.png', name: 'Sân PicklePall', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
         { image: 'gym-thumbnail1.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
         { image: 'gym2.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
         { image: 'bongro-deal.png', name: 'Sân Bóng Rổ', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
         { image: 'bg-picklepall2.png', name: 'Sân PicklePall', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
         { image: 'gym7.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
-        { image: 'soccer-thumbnail2.png', name: 'Sân Bóng', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
+        { image: 'soccer-thumbnail2.png', name: 'Sân Bóng Đá', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
