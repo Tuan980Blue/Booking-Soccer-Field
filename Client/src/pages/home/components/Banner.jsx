@@ -10,7 +10,7 @@ const Banner = () => {
         { image: 'bongro-deal.png', name: 'Sân Bóng Rổ', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
         { image: 'bg-picklepall2.png', name: 'Sân PicklePall', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
         { image: 'gym7.png', name: 'SPORT CENTER', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
-        { image: 'soccer-thumbnail2.png', name: 'Sân Bóng Đá', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
+        { image: 'bg-soccer.png', name: 'Sân Bóng Đá', description: 'Đặt lịch ngay để nhận ưu đãi sớm nhất nhé.' },
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
