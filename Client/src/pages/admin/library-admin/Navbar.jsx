@@ -37,7 +37,7 @@ const Navbar = () => {
                             src='/avatarH.png'
                             alt="avatar"
                             withBorder={true}
-                            className="p-0.5 rounded-full border-emerald-400 cursor-pointer transition-transform transform hover:scale-110"
+                            className="p-0.5 rounded-full border-emerald-400 hover:border-green-300 cursor-pointer transition-transform transform"
                         />
                     </div>
                     <div className={"flex flex-col justify-center items-center"}>

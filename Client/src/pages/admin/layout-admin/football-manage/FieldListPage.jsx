@@ -66,7 +66,7 @@ const FieldListPage = () => {
                 {filterFieldsByType("7v7").length > 0 ? (
                     <FieldList fields={filterFieldsByType("7v7")} />
                 ) : (
-                    <p>Không có sân 7 người nào.</p>
+                    <p>Không có sân 7 người nào.</p>         
                 )}
 
                 {/* Sân 11 người */}
