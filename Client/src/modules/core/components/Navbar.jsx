@@ -1,6 +1,7 @@
 import {useContext, useEffect, useRef, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {UserContext} from '../../../context/UserContext';
+import {Avatar} from "@material-tailwind/react";
 // eslint-disable-next-line react/prop-types
 const MegaItem = ({title, description, link}) => {
   return (
@@ -156,7 +157,7 @@ const Navbar = () => {
               <li>
                 <Link to="/booking"
                    className="block py-2 px-3 text-gray-900 rounded hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                  Đặt Sân</Link>
+                   Lịch Sử</Link>
               </li>
               <li>
                 <div className="flex space-x-4">
@@ -217,13 +218,18 @@ const Navbar = () => {
                     type="button"
                     ref={UserbuttonRef}
                     onClick={toggleUserMenu}
-                    className="flex items-center text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                    className=""
                     aria-expanded={isUserMenuOpen}
                     aria-haspopup="true"
                 >
                   <span className="sr-only">Open user menu</span>
                   {user ? (
-                      <img className="w-9 h-9 rounded-full" src={user.avatar} alt="User Avatar" />
+                          <Avatar
+                              src={user.avatar || '/avatarT.png'}
+                              alt="User Avatar"
+                              withBorder={true}
+                              className="p-0.5 rounded-full border-emerald-400 hover:border-green-300 cursor-pointer transition-transform transform"
+                          />
                   ) : (
                       <Link to={"/sign-in"}>
                         <button
@@ -297,8 +303,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link to="#"
-                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Đặt
-                    Lịch</Link>
+                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Lịch Đặt</Link>
                 </li>
                 <li>
                   <Link to="#"

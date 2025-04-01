@@ -6,7 +6,7 @@ import {useState} from "react";
 import {SiGoogletagmanager, SiOpenaigym} from "react-icons/si";
 import {BsPersonVcardFill} from "react-icons/bs";
 import {RiFileList3Fill} from "react-icons/ri";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {IoIosArrowForward, IoMdPersonAdd} from "react-icons/io";
 import {PiBookOpenBold} from "react-icons/pi";
 import { PiShoppingCart } from "react-icons/pi";
@@ -24,7 +24,7 @@ const Sidebar = ({isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode}) =
 
     // Updated menuItems array with icons
     const menuItems = [
-        {name: 'Home', link: '/admin', icon: <MdHome/>},
+        {name: 'Trang Chủ', link: '/admin', icon: <MdHome/>},
         {name: 'Quản Lý', icon: <SiGoogletagmanager/>},
         {name: 'Phân Quyền', link: '/admin/role-manage', icon: <MdManageAccounts/>},
         {name: 'Thống Kê', link: '/admin/statistic-manage', icon: <MdAssessment/>},
@@ -33,12 +33,12 @@ const Sidebar = ({isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode}) =
 
     // Sub-menu items
     const tableSubItems = [
-        {name: 'Quản lý Bài Đăng', link: '/admin/post-manage', icon: <RiFileList3Fill/>},
+        {name: 'Quản lý Dịch Vụ', link: '/admin/service-manage', icon: <RiFileList3Fill/>},
         {name: 'Quản lý Khách hàng', link: '/admin/customer-manage', icon: <BsPersonVcardFill/>},
         {name: 'Quản lý Nhân viên', link: '/admin/employee-manage', icon: <MdGroups2/>},
         {name: 'Quản lý khóa học', link: '/admin/courses-manage', icon: <PiBookOpenBold />},
         {name: 'Bán khóa học', link: '/admin/sellcourses', icon: <PiShoppingCart />},
-        {name: "Trang thiết bị", link: '/admin/equipmentlayout', icon: <SiOpenaigym/>}
+        {name: "Trang Thiết Bị", link: '/admin/equipmentlayout', icon: <SiOpenaigym/>}
 
     ];
 
@@ -74,7 +74,7 @@ const Sidebar = ({isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode}) =
                     </div>
                 </div>
                 <div
-                    className="flex items-center space-x-3 group bg-gradient-to-r dark:from-green-500 dark:to-blue-400 from-green-400 via-purple-600 to-yellow-400 pl-6 pr-2 py-1 rounded-full text-white shadow-lg transform transition-all ease-in-out duration-500">
+                    className="flex items-center space-x-3 group bg-green-500 pl-6 pr-2 py-1 rounded-full text-white shadow-lg transform transition-all ease-in-out duration-500">
                     <div className="transform ease-in-out duration-300 mr-12 font-semibold">
                         Admin Pro
                     </div>
@@ -121,19 +121,21 @@ const Sidebar = ({isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode}) =
 
                         {item.name === 'Quản Lý' && (
                             <Collapse open={openTable}>
-                                <div className="ml-8">
+                                <div
+                                    className={`ml-8 ${
+                                        isSidebarOpen ? 'mr-2' : 'mr-0'
+                                    }`}
+                                >
                                     {tableSubItems.map((subItem, subIdx) => (
                                         <NavLink
                                             key={subIdx}
                                             to={subItem.link}
-                                            className={`text-white no-underline hover:no-underline hover:text-green-400 dark:hover:text-green-500 p-2 rounded-lg bg-[#2E3B4E] mt-1 flex items-center 
-        ${isSidebarOpen ? 'space-x-2' : 'justify-end mr-2'}`
-                                            }
+                                            className={`text-white hover:ml-4 no-underline hover:no-underline hover:text-green-400 dark:hover:text-green-500 p-2 rounded-lg bg-[#2E3B4E] mt-1 flex items-center transition-all duration-300 ease-in-out ${
+                                                isSidebarOpen ? 'space-x-2' : 'justify-end mr-2'
+                                            }`}
                                         >
                                             {subItem.icon}
-                                            {isSidebarOpen && (
-                                                <span>{subItem.name}</span>
-                                            )}
+                                            {isSidebarOpen && <span>{subItem.name}</span>}
                                         </NavLink>
                                     ))}
                                 </div>
@@ -141,9 +143,14 @@ const Sidebar = ({isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode}) =
                         )}
                     </div>
                 ))}
-                <div className={"px-4 py-2"}>
-                    <div className={"text-gray-500 border-t-2 border-gray-500 text-md font-extralighto"}>
-                        Xem thêm
+                <div className="py-2 flex justify-center items-center">
+                    <div className="border-t-2 border-gray-500 w-full max-w-xs p-2 flex items-center">
+                        <Link to="/" className="ml-6">
+                            <button
+                                className="bg-gray-700 text-white px-2 py-1 rounded hover:bg-gray-600 transition-colors">
+                                Trang Chính
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

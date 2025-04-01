@@ -16,7 +16,7 @@ import EmployeeLayout from '../pages/admin/layout-admin/employee-manage/Employee
 import StatisticalLayout from '../pages/admin/layout-admin/statistics-manage/StatisticalLayout.jsx';
 import CustomerLayout from '../pages/admin/layout-admin/customer-manage/CustomerLayout.jsx';
 import HomeAdminLayout from '../pages/admin/home-admin/HomeAdminLayout.jsx';
-import PostLayout from '../pages/admin/layout-admin/post-manage/PostLayout.jsx';
+import PostLayout from '../pages/admin/layout-admin/service-manage/PostLayout.jsx';
 import RoleLayout from '../pages/admin/layout-admin/role-manage/RoleLayout.jsx';
 import SettingLayout from '../pages/admin/layout-admin/setting-manage/SettingLayout.jsx';
 import RoomLayout from './../pages/admin/layout-admin/gym-manage/layout/RoomLayout';
@@ -98,7 +98,7 @@ export const router = createBrowserRouter([
             element: <HomeAdminLayout/>,
           },
           {
-            path: 'post-manage',
+            path: 'service-manage',
             element: <PostLayout/>,
           },
           {

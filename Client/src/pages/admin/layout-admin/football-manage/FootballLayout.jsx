@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar.jsx";
 const FootballLayout = () => {
     return (
         <div className="min-h-screen bg-gray-100 w-full">
-            <div>
+            <div className={""}>
                 <Navbar/>
             </div>
 
