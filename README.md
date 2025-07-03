@@ -18,7 +18,7 @@ Booking Field là nền tảng đặt sân bóng đá trực tuyến, giúp ngư
 
 #### 🔐 Đăng nhập / đăng ký người dùng dễ dàng
 
-#### 👉 Dự án phù hợp triển khai cho các hệ thống quản lý sân thể thao thực tế hoặc làm nền tảng mở rộng thành app di động trong tương lai.
+#### 👉 Dự án triển khai cho các hệ thống quản lý sân thể thao thực tế hoặc làm nền tảng mở rộng thành app di động trong tương lai.
 
 #### 📷 Hình ảnh demo
 
