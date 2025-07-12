@@ -1,6 +1,6 @@
 ## 🚀 Booking-Soccer-Field
 
-### 🌍 Live Preview: https://booking-soccer-field.vercel.app/
+### 🌍 Live Preview: https://booking-soccer-field.vercel.app
 
 ## 📌 Giới thiệu
 Booking Field là nền tảng đặt sân bóng đá trực tuyến, giúp người chơi dễ dàng tìm kiếm, xem lịch trống, và đặt sân chỉ trong vài cú click. Giao diện thân thiện, thao tác nhanh chóng, tích hợp bản đồ và phản hồi tức thì — tất cả tạo nên trải nghiệm đặt sân xịn sò chuẩn chuyên nghiệp dành cho cả người chơi lẫn chủ sân.
